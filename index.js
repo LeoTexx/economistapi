@@ -24,6 +24,5 @@ app.post("/data", (req, res) => {
   res.json(dataToSend);
 });
 app.listen(PORT, () => {
-    console.warn(`App listening on http://localhost:${PORT}`);
-  });
-);
+  console.warn(`App listening on http://localhost:${PORT}`);
+});
