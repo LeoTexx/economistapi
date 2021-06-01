@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { spawn } = require("child_process");
 const app = express();
-const port = 3333;
+const PORT = process.env.PORT || 3333;
 app.use(cors());
 app.get("/", (req, res) => {
   var dataToSend;
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 app.post("/data", (req, res) => {
   res.json(dataToSend);
 });
-app.listen(port, () =>
-  console.log(`Example app listening on port 
-${port}!`)
+app.listen(PORT, () => {
+    console.warn(`App listening on http://localhost:${PORT}`);
+  });
 );
