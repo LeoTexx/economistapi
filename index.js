@@ -1,17 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const bodyParser = require("body-parser");
-const InitiateMongoServer = require("./config/db");
-const user = require("./routes/user");
 const { spawn } = require("child_process");
-
-InitiateMongoServer();
 
 const app = express();
 const PORT = process.env.PORT || 3333;
 
-app.use(bodyParser.json());
-
-app.use("/user", user);
+app.use(cors());
 
 app.get("/", (req, res) => {
   var dataToSend;
